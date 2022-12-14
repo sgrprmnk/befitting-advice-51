@@ -1,17 +1,24 @@
 package com.example.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 @Entity
 public class Restaurant {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String restaurantId;
     private String restaurantName;
-    @ManyToOne
-    @JoinColumn(name = "address_address_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "address_address_id")
     private Address address;
-    @ManyToMany
-    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
+    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> itemList;
     private String managerName;
     private String contactNumber;

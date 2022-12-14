@@ -1,11 +1,18 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.annotation.processing.Generated;
+import javax.persistence.*;
 
 @Entity
 public class Address {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String addressId;
     private String buildingName;
     private String StreetNo;

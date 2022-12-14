@@ -1,16 +1,23 @@
 package com.example.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 @Entity
 public class FoodCart {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String cartId;
-    @ManyToOne
-    @JoinColumn(name = "customer_customer_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "customer_customer_id")
     private Customer customer;
-    @OneToMany
-    @JoinColumn(name = "item_cart_id")
+    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "item_cart_id")
     private List<Item> itemList;
 
     public FoodCart() {

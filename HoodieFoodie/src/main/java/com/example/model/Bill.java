@@ -1,17 +1,21 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 @Entity
 public class Bill {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String billId;
     private LocalDateTime billDate;
-    @ManyToOne
-    @JoinColumn(name = "order_order_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "order_order_id")
     private OrderDetails order;
     private Integer totalItem;
 

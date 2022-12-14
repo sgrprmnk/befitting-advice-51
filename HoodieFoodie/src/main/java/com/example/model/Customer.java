@@ -1,21 +1,25 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String customerId;
     private String firstName;
     private String lastName;
     private Integer age;
     private String gender;
     private String mobileNumber;
-    @ManyToOne
-    @JoinColumn(name = "address_address_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "address_address_id")
     private Address address;
     private String email;
 

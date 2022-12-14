@@ -1,18 +1,25 @@
 package com.example.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 @Entity
 public class Item {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private String itemId;
     private String itemName;
-    @ManyToOne
-    @JoinColumn(name = "category_cat_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "category_cat_id")
     private Category category;
     private Integer quantity;
     private Double cost;
-@ManyToMany(mappedBy = "itemList")
+@ManyToMany(cascade = CascadeType.ALL,mappedBy = "itemList")
     private List<Restaurant> restaurants;
 
     public Item() {
