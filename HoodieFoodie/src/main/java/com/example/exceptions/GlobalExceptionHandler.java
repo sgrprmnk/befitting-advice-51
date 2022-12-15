@@ -37,4 +37,18 @@ public class GlobalExceptionHandler {
         MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), nfe.getMessage(), req.getDescription(false));
         return new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(OrderDetailsException.class)
+    public ResponseEntity<MyErrorDetails> myIllegalHandler(OrderDetailsException ie, WebRequest req){
+        MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(),ie.getMessage(), req.getDescription(false));
+        ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
+        return re;
+    }
+
+    @ExceptionHandler(BillException.class)
+    public ResponseEntity<MyErrorDetails> myIllegalHandler(BillException ie, WebRequest req){
+        MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(),ie.getMessage(), req.getDescription(false));
+        ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
+        return re;
+    }
 }
