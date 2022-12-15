@@ -9,12 +9,13 @@ public class Restaurant {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator")
+    name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String restaurantId;
     private String restaurantName;
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
     private Address address;
     @ManyToMany(cascade = CascadeType.ALL)
