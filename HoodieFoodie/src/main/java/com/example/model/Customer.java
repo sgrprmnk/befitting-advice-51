@@ -3,6 +3,7 @@ package com.example.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -18,9 +19,12 @@ public class Customer {
     private Integer age;
     private String gender;
     private String mobileNumber;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne (cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
     private Address address;
+
+
+
     private String email;
 
     public Customer() {

@@ -14,6 +14,8 @@ public class Bill {
     @Column(updatable = false, nullable = false)
     private String billId;
     private LocalDateTime billDate;
+
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_order_id")
     private OrderDetails order;
@@ -23,17 +25,22 @@ public class Bill {
     public Bill() {
     }
 
-    
-    
+    public Bill(String billId, LocalDateTime billDate, OrderDetails order, Integer totalItem, Double totalCost) {
+        this.billId = billId;
+        this.billDate = billDate;
+        this.order = order;
+        this.totalItem = totalItem;
+        this.totalCost = totalCost;
+    }
 
-	public Bill(String billId, LocalDateTime billDate, OrderDetails order, Integer totalItem, Double totalCost) {
-		super();
-		this.billId = billId;
-		this.billDate = billDate;
-		this.order = order;
-		this.totalItem = totalItem;
-		this.totalCost = totalCost;
-	}
+    public Double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(Double totalCost) {
+        this.totalCost = totalCost;
+    }
+
 
 
 	public String getBillId() {
