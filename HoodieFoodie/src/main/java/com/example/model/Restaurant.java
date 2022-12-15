@@ -21,6 +21,7 @@ public class Restaurant {
     @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> itemList;
+    
     private String managerName;
     private String contactNumber;
 

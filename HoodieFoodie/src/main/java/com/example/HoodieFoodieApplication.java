@@ -12,6 +12,7 @@ public class HoodieFoodieApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HoodieFoodieApplication.class, args);
 	}
+	
 	@Bean
 	public LocalValidatorFactoryBean validator(MessageSource ms) {
 		LocalValidatorFactoryBean lvfb = new LocalValidatorFactoryBean();
