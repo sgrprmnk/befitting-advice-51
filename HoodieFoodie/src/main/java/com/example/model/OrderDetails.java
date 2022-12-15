@@ -15,6 +15,7 @@ public class OrderDetails {
     private Integer orderId;
     private LocalDateTime orderDate;
 
+
     @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "cart_cart_id")
     private FoodCart cart;

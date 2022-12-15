@@ -14,6 +14,7 @@ public class Restaurant {
     @Column(updatable = false, nullable = false)
     private String restaurantId;
     private String restaurantName;
+
     @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
     private Address address;
