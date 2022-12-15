@@ -9,18 +9,19 @@ public class Bill {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator")
+    name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String billId;
     private LocalDateTime billDate;
 
 
     @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "order_order_id")
+    @JoinColumn(name = "order_order_id")
     private OrderDetails order;
     private Integer totalItem;
     private Double totalCost;
+
     public Bill() {
     }
 
@@ -40,7 +41,9 @@ public class Bill {
         this.totalCost = totalCost;
     }
 
-    public String getBillId() {
+
+
+	public String getBillId() {
         return billId;
     }
 
@@ -72,13 +75,19 @@ public class Bill {
         this.totalItem = totalItem;
     }
 
-    @Override
-    public String toString() {
-        return "Bill{" +
-                "billId='" + billId + '\'' +
-                ", billDate=" + billDate +
-                ", order=" + order +
-                ", totalItem=" + totalItem +
-                '}';
-    }
+   public Double getTotalCost() {
+		return totalCost;
+	}
+
+
+	public void setTotalCost(Double totalCost) {
+		this.totalCost = totalCost;
+	}
+
+	@Override
+	public String toString() {
+		return "Bill [billId=" + billId + ", billDate=" + billDate + ", order=" + order + ", totalItem=" + totalItem
+				+ ", totalCost=" + totalCost + "]";
+	}
+
 }
