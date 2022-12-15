@@ -24,15 +24,7 @@ public class Bill {
     }
 
     
-    public Double getTotalCost() {
-		return totalCost;
-	}
-
-
-	public void setTotalCost(Double totalCost) {
-		this.totalCost = totalCost;
-	}
-
+    
 
 	public Bill(String billId, LocalDateTime billDate, OrderDetails order, Integer totalItem, Double totalCost) {
 		super();
@@ -76,6 +68,14 @@ public class Bill {
         this.totalItem = totalItem;
     }
 
+   public Double getTotalCost() {
+		return totalCost;
+	}
+
+
+	public void setTotalCost(Double totalCost) {
+		this.totalCost = totalCost;
+	}
 
 	@Override
 	public String toString() {
