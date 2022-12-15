@@ -10,8 +10,8 @@ public class Address {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator")
+    name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String addressId;
     private String buildingName;

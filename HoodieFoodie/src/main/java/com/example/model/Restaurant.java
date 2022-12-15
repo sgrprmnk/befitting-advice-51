@@ -9,8 +9,8 @@ public class Restaurant {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator")
+    name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String restaurantId;
     private String restaurantName;
