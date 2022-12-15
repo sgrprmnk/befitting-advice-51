@@ -13,7 +13,8 @@ public class FoodCart {
             strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String cartId;
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "customer_customer_id")
     private Customer customer;
     @OneToMany(cascade = CascadeType.ALL)
