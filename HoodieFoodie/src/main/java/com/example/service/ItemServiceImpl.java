@@ -20,7 +20,11 @@ public class ItemServiceImpl implements ItemService{
     private ItemDao itemDao;
     @Override
     public Item addItem(Item item) {
-       return itemDao.save(item);
+        List<Restaurant> restaurants=item.getRestaurants();
+        for (Restaurant restaurant:restaurants){
+            restaurant.getItemList().add(item);
+        }
+        return itemDao.save(item);
     }
 
     @Override

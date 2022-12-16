@@ -1,13 +1,14 @@
+
 package com.example.services;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import com.example.Exception.OrderDetailsException;
-import com.example.Module.Customer;
-import com.example.Module.OrderDetails;
-import com.example.Module.Restaurant;
+import hoodie.foodie.Exception.OrderDetailsException;
+import hoodie.foodie.Module.Customer;
+import hoodie.foodie.Module.OrderDetails;
+import hoodie.foodie.Module.Restaurant;
 @Service
 public interface OrderDetailsServices {
 	public OrderDetails addOrder(OrderDetails orderdertails) throws OrderDetailsException;
@@ -19,3 +20,5 @@ public interface OrderDetailsServices {
 	
 
 }
+
+

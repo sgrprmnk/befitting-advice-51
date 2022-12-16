@@ -1,10 +1,11 @@
+
 package com.example.services;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.example.Exception.BillException;
-import com.example.Module.Bill;
+import hoodie.foodie.Exception.BillException;
+import hoodie.foodie.Module.Bill;
 
 public interface BillServices {
 	public Bill addBill(Bill bill) throws BillException;
@@ -16,3 +17,4 @@ public interface BillServices {
 	public double calculateTotalCost(Bill bill)throws BillException;
 
 }
+

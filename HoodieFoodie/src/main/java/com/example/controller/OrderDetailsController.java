@@ -1,3 +1,4 @@
+
 package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Exception.OrderDetailsException;
-import com.example.Module.Customer;
-import com.example.Module.OrderDetails;
-import com.example.Module.Restaurant;
-import com.example.Services.OrderDetailsServices;
+import hoodie.foodie.Exception.OrderDetailsException;
+import hoodie.foodie.Module.Customer;
+import hoodie.foodie.Module.OrderDetails;
+import hoodie.foodie.Module.Restaurant;
+import hoodie.foodie.Services.OrderDetailsServices;
 import java.util.*;
 @RestController
 public class OrderDetailsController {
@@ -67,3 +68,4 @@ public class OrderDetailsController {
 	 
 
 }
+

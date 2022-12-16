@@ -48,4 +48,6 @@ public class MyErrorDetails {
                 ", details='" + details + '\'' +
                 '}';
     }
+
+
 }
