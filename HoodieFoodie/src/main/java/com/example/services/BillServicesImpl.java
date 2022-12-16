@@ -7,9 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hoodie.foodie.Exception.BillException;
-import hoodie.foodie.Module.Bill;
-import hoodie.foodie.Repo.BillRepo;
+import com.example.Exception.BillException;
+import com.example.Module.Bill;
+import com.example.Repo.BillRepo;
 
 @Service
 public class BillServicesImpl implements BillServices {

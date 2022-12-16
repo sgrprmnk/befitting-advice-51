@@ -3,8 +3,8 @@ package com.example.services;
 import java.time.LocalDate;
 import java.util.List;
 
-import hoodie.foodie.Exception.BillException;
-import hoodie.foodie.Module.Bill;
+import com.example.Exception.BillException;
+import com.example.Module.Bill;
 
 public interface BillServices {
 	public Bill addBill(Bill bill) throws BillException;

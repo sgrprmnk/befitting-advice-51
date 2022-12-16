@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import hoodie.foodie.Exception.OrderDetailsException;
-import hoodie.foodie.Module.OrderDetails;
+import com.example.Exception.OrderDetailsException;
+import com.example.Module.OrderDetails;
 @Repository
 public interface  OrderDetailsRepo extends JpaRepository<OrderDetails, Integer> {
 

@@ -5,11 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import hoodie.foodie.Exception.OrderDetailsException;
-import hoodie. foodie.Module.Customer;
-import hoodie. foodie.Module.OrderDetails;
-import hoodie. foodie.Module.Restaurant;
-import hoodie.foodie.Repo.OrderDetailsRepo;
+import com.example.Exception.OrderDetailsException;
+import com.example.Module.Customer;
+import com.example.Module.OrderDetails;
+import com.example.Module.Restaurant;
+import com.example.Repo.OrderDetailsRepo;
 
 public class OrderDetailsImpl implements OrderDetailsServices {
 

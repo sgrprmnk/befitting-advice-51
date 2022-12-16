@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import hoodie.foodie.Exception.BillException;
-import hoodie.foodie.Module.Bill;
-import hoodie.foodie.Repo.BillRepo;
-import hoodie.foodie.Services.BillServices;
+import com.example.Exception.BillException;
+import com.example.Module.Bill;
+import com.example.Repo.BillRepo;
+import com.example.Services.BillServices;
 
 public class BillController {
 
