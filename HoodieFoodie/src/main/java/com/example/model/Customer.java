@@ -27,10 +27,12 @@ public class Customer {
 
     private String email;
 
+    private String password;
+
     public Customer() {
     }
 
-    public Customer(String customerId, String firstName, String lastName, Integer age, String gender, String mobileNumber, Address address, String email) {
+    public Customer(String customerId, String firstName, String lastName, Integer age, String gender, String mobileNumber, Address address, String email, String password) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -39,6 +41,7 @@ public class Customer {
         this.mobileNumber = mobileNumber;
         this.address = address;
         this.email = email;
+        this.password = password;
     }
 
     public String getCustomerId() {
@@ -105,6 +108,14 @@ public class Customer {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -116,6 +127,7 @@ public class Customer {
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", address=" + address +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

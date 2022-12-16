@@ -8,6 +8,13 @@ import java.time.LocalDateTime;
 public class OrderDetails {
     @Id
 <<<<<<< HEAD
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
+=======
+<<<<<<< HEAD
 //    @GeneratedValue(generator = "UUID")
 //    @GenericGenerator(
 //            name = "UUID",
@@ -24,6 +31,7 @@ public class OrderDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
      @Column(updatable = false, nullable = false)
 >>>>>>> a44b6563bcc075a54c0cd24c3ee26476a5ccfb4e
+>>>>>>> ae6e80f914f760e342eb36bd53a4a3eeba2a3fbc
     private Integer orderId;
     private LocalDateTime orderDate;
 

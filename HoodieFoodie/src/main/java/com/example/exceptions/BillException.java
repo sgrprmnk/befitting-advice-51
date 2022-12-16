@@ -1,4 +1,4 @@
-package com.example.exception;
+package com.example.exceptions;
 
 public class BillException extends Exception {
    public BillException() {}
