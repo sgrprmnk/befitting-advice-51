@@ -1,14 +1,14 @@
 package com.example.exceptions;
 
-public class ItemException extends Exception {
+
 	
-	public ItemException() {
-		super();
-	}
-	
-	public ItemException(String message) {
-		super(message);
-	}
-	
+
+
+public class ItemException extends Exception{
+    public ItemException() {
+    }
+    public ItemException(String message) {
+        super(message);
+    }
 
 }
