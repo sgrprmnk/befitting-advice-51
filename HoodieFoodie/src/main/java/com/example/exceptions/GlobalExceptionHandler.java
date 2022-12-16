@@ -9,6 +9,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.time.LocalDateTime;
 
+
 @ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(CustomerException.class)
@@ -31,10 +32,43 @@ public class GlobalExceptionHandler {
         ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
         return re;
     }
+    
     //to handle Not found exception
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<MyErrorDetails> mynotFoundHandler(NoHandlerFoundException nfe, WebRequest req) {
         MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), nfe.getMessage(), req.getDescription(false));
         return new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
     }
+    
+    @ExceptionHandler(ItemException.class)
+	public ResponseEntity<MyErrorDetails> ItemExceptionHandler(ItemException ce, WebRequest req){
+    	
+    	  MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ce.getMessage(), req.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
+		
+	}
+    
+    @ExceptionHandler(RestaurantException.class)
+	public ResponseEntity<MyErrorDetails> RestaurantExceptionHandler(RestaurantException ce, WebRequest req){
+		
+    	 MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ce.getMessage(), req.getDescription(false));
+ 		
+ 		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
+ 		
+		
+//		return new ResponseEntity<MyErrorDetails>(,HttpStatus.BAD_REQUEST);
+		
+	}
+    
+	@ExceptionHandler(CartException.class)
+	public ResponseEntity<MyErrorDetails> CartExceptionHandler(CartException ce, WebRequest req){
+		
+		 MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ce.getMessage(), req.getDescription(false));
+			
+			return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
+			
+	}
+	
+	
 }
