@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfig
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import hoodie.foodie.Module.Bill;
+import com.example.Module.Bill;
 @Repository
 public interface BillRepo extends JpaRepository<Bill, String> {
 	
