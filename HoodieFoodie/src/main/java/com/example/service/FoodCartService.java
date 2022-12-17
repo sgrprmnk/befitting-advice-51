@@ -6,6 +6,7 @@ import com.example.model.Item;
 
 public interface FoodCartService {
     public FoodCart addItemToCart (FoodCart foodCard , Item item)throws FoodCartException;
+  //  public FoodCart addItemCart(Item item, String )
     public FoodCart increaseQuantity(FoodCart foodCart,Item item,Integer quantity)throws FoodCartException;
     public FoodCart reduceQuantity(FoodCart foodCart, Item item, Integer quantity)throws FoodCartException;
     public FoodCart removeItem(FoodCart foodCart,Item item)throws FoodCartException;

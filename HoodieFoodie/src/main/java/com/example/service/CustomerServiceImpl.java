@@ -1,9 +1,11 @@
 package com.example.service;
 
 import com.example.exceptions.CustomerException;
+import com.example.model.CurrentUserSession;
 import com.example.model.Customer;
 import com.example.model.Restaurant;
 import com.example.repository.CustomerDao;
+import com.example.repository.SessionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
 	private CustomerDao customerDao;
-	
+	@Autowired
+	private SessionDao sessionDao;
+
 
 	@Override
 	public Customer addCustomer(Customer customer) throws CustomerException {
@@ -28,23 +32,18 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer updateCustomer(Customer customer) throws CustomerException {
-		Optional<Customer> opt = customerDao.findById(customer.getCustomerId());
-		if(opt.isPresent()) {
+	public Customer updateCustomer(Customer customer,String key) throws CustomerException {
+		CurrentUserSession loggedInUser=sessionDao.findByUuid(key);
+		if (loggedInUser==null){
+			throw new CustomerException("Please provide a valid key to update");
+		}
+
+		//Optional<Customer> opt = customerDao.findById(customer.getCustomerId());
+		if(customer.getCustomerId()==loggedInUser.getUserId()) {
 			return customerDao.save(customer);
 		}
 		throw new CustomerException("No Customer Exist with this Data");
 	}
-
-//	@Override
-//	public Customer removeCustomer(String id) throws CustomerException {
-//		Optional<Customer> opt = customerDao.findById(id);
-//		if(opt.isPresent()) {
-//			customerDao.delete(opt.get());
-//			return opt.get();
-//		}
-//		throw new CustomerException("No Customer Exist");
-//	}
 
 	@Override
 	public Customer removeCustomer(Customer customer) throws CustomerException {
