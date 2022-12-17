@@ -82,5 +82,15 @@ public class Item {
         this.restaurants = restaurants;
     }
 
-
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemId='" + itemId + '\'' +
+                ", itemName='" + itemName + '\'' +
+                ", category=" + category +
+                ", quantity=" + quantity +
+                ", cost=" + cost +
+                ", restaurants=" + restaurants +
+                '}';
+    }
 }

@@ -1,6 +1,5 @@
 package com.example.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,7 +18,6 @@ public class Restaurant {
     @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
     private Address address;
-    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> itemList;
@@ -86,4 +84,15 @@ public class Restaurant {
         this.contactNumber = contactNumber;
     }
 
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "restaurantId='" + restaurantId + '\'' +
+                ", restaurantName='" + restaurantName + '\'' +
+                ", address=" + address +
+                ", itemList=" + itemList +
+                ", managerName='" + managerName + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                '}';
+    }
 }
