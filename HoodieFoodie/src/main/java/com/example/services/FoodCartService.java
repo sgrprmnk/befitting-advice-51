@@ -1,15 +1,14 @@
-package com.example.services;
+package com.example.service;
 
-import com.example.Exception.FoodCartException;
-import com.example.Module.FoodCart;
-import com.example.Module.Item;
+import com.example.exceptions.FoodCartException;
+import com.example.model.FoodCart;
+import com.example.model.Item;
 
 public interface FoodCartService {
-	public FoodCart addItemToCart (FoodCart foodCard ,Item item)throws FoodCartException;
-	public FoodCart increaseQuantity(FoodCart foodCart,Item item,Integer quantity)throws FoodCartException;
-	public FoodCart reduceQuantity(FoodCart foodCart,Item item,Integer quantity)throws FoodCartException; 
-	public FoodCart removeItem(FoodCart foodCart,Item item)throws FoodCartException; 
-	public FoodCart clearCart(FoodCart foodCart)throws FoodCartException;
-	
-
+    public FoodCart addItemToCart (String foodCartId , Item item)throws FoodCartException;
+  //  public FoodCart addItemCart(Item item, String )
+    public FoodCart increaseQuantity(String foodCartId,Item item,Integer quantity)throws FoodCartException;
+    public FoodCart reduceQuantity(String foodCartId, Item item, Integer quantity)throws FoodCartException;
+    public FoodCart removeItem(String foodCartId,Item item)throws FoodCartException;
+    public FoodCart clearCart(FoodCart foodCart)throws FoodCartException;
 }
