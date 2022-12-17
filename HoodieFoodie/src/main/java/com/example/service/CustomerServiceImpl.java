@@ -1,17 +1,16 @@
 package com.example.service;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.example.exceptions.CustomerException;
-import com.example.model.Address;
 import com.example.model.Customer;
 import com.example.model.Restaurant;
 import com.example.repository.CustomerDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired

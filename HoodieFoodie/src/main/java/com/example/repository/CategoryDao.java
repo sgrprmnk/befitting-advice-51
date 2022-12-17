@@ -1,12 +1,12 @@
 package com.example.repository;
 
-import java.util.List;
-
+import com.example.exceptions.OrderDetailsException;
+import com.example.model.Category;
+import com.example.model.OrderDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.model.Category;
+import java.util.List;
 
-
-public interface CategoryDao extends JpaRepository<Category, String> {
-	public List<Category> findByCategoryName(String catName);
+public interface CategoryDao extends JpaRepository<Category,String> {
+    public List<Category> findByCategoryName(String catName);
 }

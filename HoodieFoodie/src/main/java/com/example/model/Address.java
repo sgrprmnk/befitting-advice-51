@@ -2,17 +2,16 @@ package com.example.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
     name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(updatable = false, nullable = false)
+    @Column(updatable = false)
     private String addressId;
     private String buildingName;
     private String StreetNo;

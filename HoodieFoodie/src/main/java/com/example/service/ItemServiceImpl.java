@@ -7,6 +7,7 @@ import com.example.model.Category;
 import com.example.model.Item;
 import com.example.model.Restaurant;
 import com.example.repository.ItemDao;
+import com.example.repository.RestaurantDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +19,20 @@ public class ItemServiceImpl implements ItemService{
 
     @Autowired
     private ItemDao itemDao;
+    @Autowired
+    private RestaurantDao restaurantDao;
+
     @Override
-    public Item addItem(Item item) {
-        List<Restaurant> restaurants=item.getRestaurants();
-        for (Restaurant restaurant:restaurants){
-            restaurant.getItemList().add(item);
-        }
+    public Item addItem(Item item,String restaurantName) throws ResturantException {
+
+Restaurant existingRestaurant=restaurantDao.findByRestaurantName(restaurantName);
+if (existingRestaurant==null){
+    throw new ResturantException("Restaurant Not found");
+
+}
+existingRestaurant.getItemList().add(item);
+
+
         return itemDao.save(item);
     }
 

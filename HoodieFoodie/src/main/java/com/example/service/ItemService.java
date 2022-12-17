@@ -10,7 +10,7 @@ import com.example.model.Restaurant;
 import java.util.List;
 
 public interface ItemService {
-    public Item addItem(Item item);
+    public Item addItem(Item item, String restaurantName) throws ResturantException;
     public Item updateItem(Item item) throws ItemException;
     public Item viewItem(Item item) throws ItemException;
     public Item removeItem(Item item) throws ItemException;

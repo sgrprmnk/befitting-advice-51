@@ -13,16 +13,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("hoodiefoodie")
 public class ItemController {
     @Autowired
     private ItemService itemService;
-    @PostMapping("/item")
-    private ResponseEntity<Item> addItemHandler(@RequestBody  Item item){
-      Item items=itemService.addItem(item);
+    @PostMapping("/item/{restaurantName}")
+    private ResponseEntity<Item> addItemHandler(@RequestBody  Item item, @PathVariable("restaurantName") String restaurantName) throws ResturantException {
+      Item items=itemService.addItem(item,restaurantName);
       return new ResponseEntity<>(items, HttpStatus.CREATED);
 
     }
