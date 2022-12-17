@@ -1,5 +1,6 @@
 package com.example.model;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import java.util.List;
 @Entity
 public class Item {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator")
@@ -15,11 +16,13 @@ public class Item {
     private String itemId;
     private String itemName;
     @ManyToOne(cascade = CascadeType.ALL)
+
 //    @JoinColumn(name = "category_cat_id")
     private Category category;
     private Integer quantity;
     private Double cost;
-@ManyToMany(cascade = CascadeType.ALL,mappedBy = "itemList")
+
+@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "itemList")
     private List<Restaurant> restaurants;
 
     public Item() {
@@ -82,15 +85,5 @@ public class Item {
         this.restaurants = restaurants;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "itemId='" + itemId + '\'' +
-                ", itemName='" + itemName + '\'' +
-                ", category=" + category +
-                ", quantity=" + quantity +
-                ", cost=" + cost +
-                ", restaurants=" + restaurants +
-                '}';
-    }
+
 }

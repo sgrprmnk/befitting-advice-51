@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class FoodCart {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator")
@@ -17,7 +17,7 @@ public class FoodCart {
     @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "customer_customer_id")
     private Customer customer;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 //    @JoinColumn(name = "item_cart_id")
     private List<Item> itemList;
 

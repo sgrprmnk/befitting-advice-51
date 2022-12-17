@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import java.util.List;
 @Entity
 public class Restaurant {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
     name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator")
@@ -17,8 +18,10 @@ public class Restaurant {
 
     @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
+  //  @Embedded //1812
     private Address address;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 //    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> itemList;
     private String managerName;
@@ -84,15 +87,4 @@ public class Restaurant {
         this.contactNumber = contactNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Restaurant{" +
-                "restaurantId='" + restaurantId + '\'' +
-                ", restaurantName='" + restaurantName + '\'' +
-                ", address=" + address +
-                ", itemList=" + itemList +
-                ", managerName='" + managerName + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                '}';
-    }
 }

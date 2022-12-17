@@ -3,34 +3,36 @@ package com.example.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(updatable = false, nullable = false)
+    @Column(updatable = false)
     private String customerId;
     private String firstName;
     private String lastName;
     private Integer age;
     private String gender;
     private String mobileNumber;
-    @OneToOne (cascade = CascadeType.ALL)
+ @OneToOne (cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_address_id")
+   // @Embedded ///1812
     private Address address;
 
 
 
     private String email;
 
+    private String password;
+
     public Customer() {
     }
 
-    public Customer(String customerId, String firstName, String lastName, Integer age, String gender, String mobileNumber, Address address, String email) {
+    public Customer(String customerId, String firstName, String lastName, Integer age, String gender, String mobileNumber, Address address, String email, String password) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -39,6 +41,7 @@ public class Customer {
         this.mobileNumber = mobileNumber;
         this.address = address;
         this.email = email;
+        this.password = password;
     }
 
     public String getCustomerId() {
@@ -105,6 +108,14 @@ public class Customer {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -116,6 +127,7 @@ public class Customer {
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", address=" + address +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

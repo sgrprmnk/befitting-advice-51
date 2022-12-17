@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Bill {
     @Id
-    @GeneratedValue(generator = "UUID")
+    @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
     @GenericGenerator(
     name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator")
@@ -16,8 +16,8 @@ public class Bill {
     private LocalDateTime billDate;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_order_id")
+    @OneToOne(cascade = CascadeType.ALL)
+   // @JoinColumn(name = "order_order_id")
     private OrderDetails order;
     private Integer totalItem;
     private Double totalCost;
@@ -75,14 +75,7 @@ public class Bill {
         this.totalItem = totalItem;
     }
 
-   public Double getTotalCost() {
-		return totalCost;
-	}
 
-
-	public void setTotalCost(Double totalCost) {
-		this.totalCost = totalCost;
-	}
 
 	@Override
 	public String toString() {

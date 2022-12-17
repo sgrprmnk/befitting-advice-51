@@ -1,10 +1,10 @@
-package com.example.exception;
+package com.example.exceptions;
 
-public class FoodCartException extends Exception {
-	
+public class FoodCartException extends Exception{
+    public FoodCartException() {
+    }
 
-public FoodCartException() {}
-public FoodCartException(String msg) {
-	super(msg);
-}
+    public FoodCartException(String message) {
+        super(message);
+    }
 }
