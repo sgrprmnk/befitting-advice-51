@@ -29,9 +29,9 @@ public class RestaurantController {
         return new ResponseEntity<>(rest, HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/restaurants")
-    public ResponseEntity<Restaurant> delRestaurants(Restaurant restaurant) throws RestaurantException {
-        Restaurant rest = restaurantService.deleterestaurant(restaurant);
+    @DeleteMapping("/restaurants/{restoId}")
+    public ResponseEntity<Restaurant> delRestaurants(@PathVariable("restoId") String restoId) throws RestaurantException {
+        Restaurant rest = restaurantService.deleterestaurant(restoId);
         return new ResponseEntity<>(rest, HttpStatus.OK);
     }
 
@@ -40,9 +40,9 @@ public class RestaurantController {
         Restaurant rest = restaurantService.viewByRestaurantName(restaurantName);
         return new ResponseEntity<>(rest, HttpStatus.OK);
     }
-    @GetMapping("/getrestaurant")
-    public ResponseEntity<Restaurant> getRestaurants(Restaurant restaurant) throws RestaurantException {
-        Restaurant rest = restaurantService.viewRestaurant(restaurant);
+    @GetMapping("/getrestaurant/{restoId}")
+    public ResponseEntity<Restaurant> getRestaurants(@PathVariable("restoId") String restoId) throws RestaurantException {
+        Restaurant rest = restaurantService.viewRestaurant(restoId);
         return new ResponseEntity<>(rest, HttpStatus.OK);
     }
     @GetMapping("/viewresto/{loc}")

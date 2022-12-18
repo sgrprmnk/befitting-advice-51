@@ -46,8 +46,8 @@ for(Item item:itemList){
         throw new RestaurantException("Restaurant is not there with given id");
     }
     @Override
-    public Restaurant deleterestaurant(Restaurant restaurant) throws RestaurantException {
-        Optional<Restaurant> rest= restaurantDao.findById(restaurant.getRestaurantId());
+    public Restaurant deleterestaurant(String restaurantId) throws RestaurantException {
+        Optional<Restaurant> rest= restaurantDao.findById(restaurantId);
         if(rest.isPresent()) {
             Restaurant deleterest =rest.get();
             restaurantDao.delete(deleterest);
@@ -65,8 +65,8 @@ for(Item item:itemList){
     }
 
     @Override
-    public Restaurant viewRestaurant(Restaurant restaurant) throws RestaurantException {
-        return  restaurantDao.findById(restaurant.getRestaurantId()).orElseThrow(()->new RestaurantException("Not found by location"));
+    public Restaurant viewRestaurant(String restaurantId) throws RestaurantException {
+        return  restaurantDao.findById(restaurantId).orElseThrow(()->new RestaurantException("Not found by location"));
 
     }
 

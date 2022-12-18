@@ -35,26 +35,26 @@ public class ItemController {
         Item item1=itemService.viewItem(item);
         return new ResponseEntity<>(item1,HttpStatus.FOUND);
     }
-    @DeleteMapping("item")
-    private ResponseEntity<Item> removeItemHandler(@RequestBody Item item) throws ItemException {
-        Item ditem=itemService.removeItem(item);
+    @DeleteMapping("item/{itemId}")
+    private ResponseEntity<Item> removeItemHandler(@PathVariable("itemId") String itemId) throws ItemException {
+        Item ditem=itemService.removeItem(itemId);
         return new ResponseEntity<>(ditem,HttpStatus.GONE);
     }
 
-    @GetMapping("itemscat")
-    private ResponseEntity<List<Item>> viewAllItemByCategoryHandler(@RequestBody Category cat) throws ItemException, CategoryException {
-        List<Item> items=itemService.viewAllItem(cat);
+    @GetMapping("itemscat/{catid}")
+    private ResponseEntity<List<Item>> viewAllItemByCategoryHandler(@PathVariable("catid") String catid) throws ItemException, CategoryException {
+        List<Item> items=itemService.viewAllItems(catid);
         return new ResponseEntity<>(items,HttpStatus.FOUND);
     }
 
-    @GetMapping("itemsres")
-    private ResponseEntity<List<Item>> viewAllItemByRestaurantHandler(@RequestBody Restaurant rest) throws ItemException, ResturantException {
-        List<Item> items=itemService.viewAllItem(rest);
+    @GetMapping("itemsres/{resId}")
+    private ResponseEntity<List<Item>> viewAllItemByRestaurantHandler(@PathVariable("resId") String resId) throws ItemException, ResturantException {
+        List<Item> items=itemService.viewAllItem(resId);
         return new ResponseEntity<>(items,HttpStatus.FOUND);
     }
-  @GetMapping("items/{name}")
-  private ResponseEntity<List<Item>> viewAllItemsByNameHandler(@PathVariable("name") String name) throws ItemException {
-        List<Item> items=itemService.viewAllItemsByName(name);
+  @GetMapping("items/{ItemName}")
+  private ResponseEntity<List<Item>> viewAllItemsByNameHandler(@PathVariable("ItemName") String ItemName) throws ItemException {
+        List<Item> items=itemService.viewAllItemsByName(ItemName);
         return new ResponseEntity<>(items,HttpStatus.FOUND);
   }
 

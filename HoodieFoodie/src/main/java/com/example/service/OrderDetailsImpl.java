@@ -2,7 +2,6 @@ package com.example.service;
 
 
 import com.example.exceptions.OrderDetailsException;
-import com.example.exceptions.RestaurantException;
 import com.example.model.*;
 import com.example.repository.FoodCartDao;
 import com.example.repository.OrderDetailsDao;
@@ -83,7 +82,7 @@ public class OrderDetailsImpl implements OrderDetailsServices {
 
 	@Override
 	public List<OrderDetails> viewAllOrdersByCustomer(Customer customer) throws OrderDetailsException{
-		FoodCart foodCart =foodCartDao.getCustomer(customer.getCustomerId());
+		FoodCart foodCart =foodCartDao.getFoodCartByCustomer(customer.getCustomerId());
 		List<OrderDetails> orderDetails=orderDetailsDao.getCart(foodCart.getCartId());
 if(orderDetails.isEmpty()){
 	throw new OrderDetailsException("Not Found");

@@ -7,14 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 
 
-
+@RestController
 public class BillController {
 
 	@Autowired
@@ -24,7 +22,7 @@ public class BillController {
 	public ResponseEntity<Bill> AddBill(@RequestBody Bill bill) throws BillException {
 
 		Bill bills= billServices.addBill(bill);
-		return new ResponseEntity<Bill>(bills,HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(bills, HttpStatus.ACCEPTED);
 	}
 
 
@@ -33,34 +31,38 @@ public class BillController {
 	@PutMapping("/Bill")
 	public ResponseEntity<Bill> updateBill(@RequestBody Bill bill) throws BillException{
 		Bill bills= billServices.updateBill(bill);
-		return new ResponseEntity<Bill>(bills,HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(bills, HttpStatus.ACCEPTED);
 	}
 
 
 
 
-	@DeleteMapping("/Bill")
-	public ResponseEntity<Bill>  deleteBill(@RequestBody Bill bill)throws BillException{
-		Bill bills= billServices.removeBill(bill);
-		return new ResponseEntity<Bill>(bills,HttpStatus.OK);
+	@DeleteMapping("/bill/{billId}")
+	public ResponseEntity<Bill>  deleteBill(@PathVariable("billId") String billId )throws BillException{
+		Bill bills= billServices.removeBill(billId);
+		return new ResponseEntity<>(bills, HttpStatus.OK);
 	}
 
 
 
-	@GetMapping("/ViewBill")
-	public ResponseEntity<Bill> viewBill(@RequestBody Bill bill) throws BillException{
-		Bill bills= billServices.viewsBill(bill);
-		return new ResponseEntity<Bill>(bills,HttpStatus.ACCEPTED);
+	@GetMapping("/viewbill/{billId}")
+	public ResponseEntity<Bill> viewBill(@PathVariable("billId") String billId) throws BillException{
+		Bill bills= billServices.viewsBill(billId);
+		return new ResponseEntity<>(bills, HttpStatus.ACCEPTED);
 	}
 
 
 
 	@GetMapping("/totalcostofBill")
-	public  double totalCostBill(@RequestBody Bill bill) throws BillException{
-		double totalCost= billServices.calculateTotalCost(bill);
-		return totalCost;
+	public  ResponseEntity<Double> totalCostBill(@RequestBody Bill bill) throws BillException{
+		Double totalCost= billServices.calculateTotalCost(bill);
+		return new ResponseEntity<>(totalCost,HttpStatus.OK);
 	}
 
-
+	@GetMapping("bills/{localdatetime}")
+   public ResponseEntity<Bill> viewBillByTimeHandler(@PathVariable("localdatetime")LocalDateTime localDateTime) throws BillException {
+		Bill bill =billServices.viewsBillByTime(localDateTime);
+		return new ResponseEntity<>(bill,HttpStatus.FOUND);
+	}
 
 }

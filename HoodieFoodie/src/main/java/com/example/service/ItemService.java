@@ -10,11 +10,11 @@ import com.example.model.Restaurant;
 import java.util.List;
 
 public interface ItemService {
-    public Item addItem(Item item, String restaurantName) throws ResturantException;
+    public Item addItem(Item item, String restaurantId) throws ResturantException;
     public Item updateItem(Item item) throws ItemException;
     public Item viewItem(Item item) throws ItemException;
-    public Item removeItem(Item item) throws ItemException;
-    public List<Item> viewAllItem(Category cat) throws CategoryException,ItemException;
-    public List<Item> viewAllItem(Restaurant res) throws ItemException, ResturantException;
+    public Item removeItem(String itemId) throws ItemException;
+    public List<Item> viewAllItems(String categoryId) throws CategoryException,ItemException;
+    public List<Item> viewAllItem(String resId) throws ItemException, ResturantException;
     public List<Item> viewAllItemsByName(String name) throws ItemException;
 }

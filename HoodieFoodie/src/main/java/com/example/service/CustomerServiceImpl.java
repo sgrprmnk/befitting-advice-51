@@ -39,19 +39,19 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		//Optional<Customer> opt = customerDao.findById(customer.getCustomerId());
-		if(customer.getCustomerId()==loggedInUser.getUserId()) {
+		if(customer.getCustomerId().equals(loggedInUser.getUserId())) {
 			return customerDao.save(customer);
 		}
 		throw new CustomerException("No Customer Exist with this Data");
 	}
 
 	@Override
-	public Customer removeCustomer(Customer customer) throws CustomerException {
+	public Customer removeCustomer(String customerId) throws CustomerException {
 		// TODO Auto-generated method stub
-		Optional<Customer> customer1= customerDao.findById(customer.getCustomerId());
+		Optional<Customer> customer1= customerDao.findById(customerId);
 		if(customer1.isPresent()) {
 			Customer existC=customer1.get();
-			customerDao.delete(customer);
+			customerDao.delete(existC);
 			
 			return existC;
 		}
@@ -60,8 +60,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer viewCustomer(Customer customer) throws CustomerException {
-		return customerDao.findById(customer.getCustomerId()).orElseThrow(()-> new CustomerException("Customer not Found"));
+	public Customer viewCustomer(String customerId) throws CustomerException {
+		return customerDao.findById(customerId).orElseThrow(()-> new CustomerException("Customer not Found"));
 	}
 //	@Override
 //	public Customer viewCustomer(String cID) throws CustomerException {

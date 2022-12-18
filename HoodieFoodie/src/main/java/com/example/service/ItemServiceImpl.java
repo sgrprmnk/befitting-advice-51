@@ -23,14 +23,14 @@ public class ItemServiceImpl implements ItemService{
     private RestaurantDao restaurantDao;
 
     @Override
-    public Item addItem(Item item,String restaurantName) throws ResturantException {
+    public Item addItem(Item item,String restaurantId) throws ResturantException {
 
-Restaurant existingRestaurant=restaurantDao.findByRestaurantName(restaurantName);
+Optional<Restaurant> existingRestaurant=restaurantDao.findById(restaurantId);
 if (existingRestaurant==null){
     throw new ResturantException("Restaurant Not found");
 
 }
-existingRestaurant.getItemList().add(item);
+existingRestaurant.get().getItemList().add(item);
 
 
         return itemDao.save(item);
@@ -53,8 +53,8 @@ existingRestaurant.getItemList().add(item);
     }
 
     @Override
-    public Item removeItem(Item item) throws ItemException {
-    Optional<Item>item1= itemDao.findById(item.getItemId());
+    public Item removeItem(String itemId) throws ItemException {
+    Optional<Item>item1= itemDao.findById(itemId);
         if(item1.isPresent()){
             Item existingItem=item1.get();
             itemDao.delete(existingItem);
@@ -65,8 +65,8 @@ existingRestaurant.getItemList().add(item);
     }
 
     @Override
-    public List<Item> viewAllItem(Category cat) throws CategoryException {
-        List<Item> items=itemDao.findByCategory(cat);
+    public List<Item> viewAllItems(String categoryId) throws CategoryException {
+        List<Item> items=itemDao.findByCatId(categoryId);
         if(items.isEmpty()){
             throw new CategoryException("Does not Exist");
         }
@@ -75,8 +75,8 @@ existingRestaurant.getItemList().add(item);
     }
 
     @Override
-    public List<Item> viewAllItem(Restaurant res) throws ResturantException {
-        List<Item> items =itemDao.findByRestaurants(res);
+    public List<Item> viewAllItem(String resId) throws ResturantException {
+        List<Item> items =itemDao.findByRestaurants(resId);
         if(items.isEmpty()){
             throw new ResturantException("Does not exist");
         }

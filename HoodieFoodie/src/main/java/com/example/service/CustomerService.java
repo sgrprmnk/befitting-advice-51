@@ -11,9 +11,9 @@ public Customer addCustomer(Customer customer) throws CustomerException;
 	
 	public Customer updateCustomer(Customer customer, String key) throws CustomerException;
 	
-	public Customer removeCustomer(Customer customer) throws CustomerException;
+	public Customer removeCustomer(String customerId) throws CustomerException;
 	
-	public Customer viewCustomer(Customer customer) throws CustomerException;
+	public Customer viewCustomer(String customerId) throws CustomerException;
 	
 	public List<Customer> viewAllCustomer(Restaurant rest) throws CustomerException;
 

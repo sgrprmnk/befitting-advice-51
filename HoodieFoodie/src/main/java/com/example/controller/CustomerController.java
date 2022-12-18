@@ -40,16 +40,16 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(cust,HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping("/customer")
-	public ResponseEntity<Customer> deleteCustomerHandler(@RequestBody Customer customer) throws CustomerException {
-		Customer cust = customerService.removeCustomer(customer);
+	@DeleteMapping("/customer/{customerId}")
+	public ResponseEntity<Customer> deleteCustomerHandler(@PathVariable("customerId") String customerId) throws CustomerException {
+		Customer cust = customerService.removeCustomer(customerId);
 		return new ResponseEntity<Customer>(cust,HttpStatus.CREATED);
 	}
 
 	
-	@GetMapping("/customer")
-	public ResponseEntity<Customer> viewCustomerHandler(@RequestBody Customer customer) throws CustomerException {
-		Customer cust = customerService.viewCustomer(customer);
+	@GetMapping("/customer/{id}")
+	public ResponseEntity<Customer> viewCustomerHandler(@PathVariable("id") String id)  throws CustomerException {
+		Customer cust = customerService.viewCustomer(id);
 		return new ResponseEntity<Customer>(cust,HttpStatus.OK);	
 		
 	}
