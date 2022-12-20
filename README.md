@@ -4,6 +4,8 @@
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
 
+## Model
+
 
 
 ## Entity Relationship Diagram
@@ -19,6 +21,7 @@
 -   Add to cart/edit into the cart
 -   Place Order
 -   Get orderdetails
+-   Get Bills
 
 
 ## Backend Work
@@ -64,6 +67,12 @@
    <img src="https://github.com/efat56/striped-pear-8171/blob/main/Images/hibernate_logo_icon_171004.png" />
    <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
 </p>
+
+# Unique Features
+- Used Id as a String and unique in every cases
+- Can be Multilanguage(Regional Language)
+
+
 
 # Api Documnentation
 <a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">swagger-api--doc</a>
