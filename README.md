@@ -4,7 +4,8 @@
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
 
-## Model
+## Module
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
 
 
 
