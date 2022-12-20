@@ -1,6 +1,6 @@
 # Hoodie Foodie 
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
-#### Online Food Delivery App strictly followed MVC architecture
+## Online Food Delivery App strictly followed MVC architecture
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
 
@@ -14,7 +14,7 @@
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Picture1.png">
 
 
-# Functionalities
+## Functionalities
 -   User can register/login-logout
 -   can view all items
 -   can view restaurants
@@ -31,7 +31,7 @@
 -  Data Stored in the database(mySQL)
 -  User Authentication of signUp, Login and Logout
 
-# Team Members
+## Team Members
 -  Sagar Pramanik
 -  Swapnil Yeutkar
 -  Sandeep Yadav
@@ -52,7 +52,7 @@
     
 -to check the swagger http://localhost:8088/swagger-ui/
 
-# Tech Stacks
+## Tech Stacks
 
 -   Java Core
 -   Spring Boot
@@ -69,11 +69,11 @@
    <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
 </p>
 
-# Unique Features
+## Unique Features
 - Used Id as a String and unique in every cases
 - Can be Multilanguage(Regional Language)
 
 
 
-# Api Documnentation
+## Api Documnentation
 <a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">swagger-api--doc</a>
