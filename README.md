@@ -1,6 +1,6 @@
 # Hoodie Foodie 
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
-# Online Food Delivery App strictly followed MVC architecture
+#### Online Food Delivery App strictly followed MVC architecture
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
 - This project is developed by me Back-End Developer in 2 week
