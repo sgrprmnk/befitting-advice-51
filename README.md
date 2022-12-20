@@ -15,9 +15,9 @@
 
 
 # Functionalities
--   User can register/login
--   See all items
--   See all restaurants
+-   User can register/login-logout
+-   can view all items
+-   can view restaurants
 -   Find items by category
 -   Add to cart/edit into the cart
 -   Place Order
@@ -29,7 +29,7 @@
 -  Proper Exception Handling
 -  Proper Input Validation
 -  Data Stored in the database(mySQL)
--  User Authentication of signUp and Login
+-  User Authentication of signUp, Login and Logout
 
 # Team Members
 -  Sagar Pramanik
