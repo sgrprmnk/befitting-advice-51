@@ -51,10 +51,13 @@
 # Tech Stacks
 
 -   Java Core
--   Spring Data JPA
 -   Spring Boot
--   Hibernate
+-   Spring Data JPA
+-   JPQL
 -   MySQL
+-   Hibernate
+-   Swagger
+-   Lombok
 <p>
    <img src="https://img.icons8.com/color/64/000000/java.png"/>
    <img src="https://img.icons8.com/color/48/null/spring-logo.png"/>
