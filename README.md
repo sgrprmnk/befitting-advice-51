@@ -8,7 +8,7 @@
 
 ## Entity Relationship Diagram
 
-
+<img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Picture1.png">
 
 
 # Functionalities
