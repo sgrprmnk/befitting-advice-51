@@ -41,7 +41,7 @@
 -  You can clone this repo and start the serve on localhost
 -   Before running the API server, we should update the database config inside the application.properties file.
 -   Update the port number, username and password as per our local database config.
-    -   server.port=8088
+    -   server.port=8888
     -   spring.datasource.url=jdbc:mysql://localhost:3306/emcommarcedb
     -   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
     -   spring.datasource.username=**Your UserName**
