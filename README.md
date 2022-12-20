@@ -1,5 +1,4 @@
 # Hoodie Foodie
-Online Food Delivery App
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
 # Online Food Delivery App
 
@@ -27,6 +26,12 @@ Online Food Delivery App
 -  Proper Input Validation
 -  Data Stored in the database(mySQL)
 -  User Authentication of signUp and Login
+
+# Team Members
+-  Sagar Pramanik
+-  Swapnil Yeutkar
+-  Sandeep Yadav
+-  Akash Chikhlonde
 
 ## Installation and Run
 -  You can clone this repo and start the serve on localhost
