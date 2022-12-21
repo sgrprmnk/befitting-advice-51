@@ -3,6 +3,12 @@
 ## Online Food Delivery App strictly followed MVC architecture
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
+ 
+ ## Team Members
+-  Sagar Pramanik
+-  Swapnil Yeutkar
+-  Sandeep Yadav
+-  Akash Chikhlonde
 
 ## Module
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
@@ -30,12 +36,6 @@
 -  Proper Input Validation
 -  Data Stored in the database(mySQL)
 -  User Authentication of signUp, Login and Logout
-
-## Team Members
--  Sagar Pramanik
--  Swapnil Yeutkar
--  Sandeep Yadav
--  Akash Chikhlonde
 
 ## Installation and Run
 -  You can clone this repo and start the serve on localhost
