@@ -53,6 +53,12 @@
 -to check the swagger http://localhost:8888/swagger-ui/
 
 ## Tech Stacks
+<p>
+   <img src="https://img.icons8.com/color/64/000000/java.png"/>
+   <img src="https://img.icons8.com/color/48/null/spring-logo.png"/>
+   <img src="https://github.com/efat56/striped-pear-8171/blob/main/Images/hibernate_logo_icon_171004.png" />
+   <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
+</p>
 
 -   Java Core
 -   Spring Boot
@@ -62,12 +68,6 @@
 -   Hibernate
 -   Swagger
 -   Lombok
-<p>
-   <img src="https://img.icons8.com/color/64/000000/java.png"/>
-   <img src="https://img.icons8.com/color/48/null/spring-logo.png"/>
-   <img src="https://github.com/efat56/striped-pear-8171/blob/main/Images/hibernate_logo_icon_171004.png" />
-   <img src="https://img.icons8.com/ios/50/null/mysql-logo.png"/>
-</p>
 
 ## Unique Features
 - Used Id as a String and unique in every cases
