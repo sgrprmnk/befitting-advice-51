@@ -76,4 +76,4 @@
 
 
 ## Api Documnentation
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">swagger-api--doc</a>
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">Click Here->swagger-api--doc</a>
