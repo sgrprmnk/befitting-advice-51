@@ -20,7 +20,8 @@
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Picture1.png">
 
 
-## Functionalities
+## Functionality (Swagger UI)
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">Click Here->swagger-api--doc</a>
 -   User can register/login-logout
 -   can view all items
 -   can view restaurants
@@ -75,5 +76,4 @@
 
 
 
-## Functionality (Swagger UI)
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/apiDocumentation_swagger.pdf">Click Here->swagger-api--doc</a>
+
