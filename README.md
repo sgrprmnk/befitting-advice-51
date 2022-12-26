@@ -21,7 +21,7 @@
 
 
 ## Functionality (Swagger UI) 
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityDocumentation_swagger.pdf">Click Here->swagger-ui-functionality</a>
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityDocumentation_swagger.pdf">Click Here for functionality details</a>
 ## Functionality at a glance
 -   User can register/login-logout
 -   can view all items
@@ -32,6 +32,8 @@
 -   Get orderdetails
 -   Get Bills
 
+## REST API
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/hoodie-foodie-api.pdf">Click Here for api details</a>
 
 ## Backend Work
 -  Proper Exception Handling
