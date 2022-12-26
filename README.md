@@ -1,4 +1,4 @@
-# Hoodie Foodie 
+# Hoodie Foodie (Online Food Delivery System)
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
 ## Online Food Delivery App strictly followed MVC architecture
 
