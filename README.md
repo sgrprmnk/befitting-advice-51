@@ -34,7 +34,7 @@
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
 
 ## REST API
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/hoodie-foodie-api.pdf">Click Here for api details</a>
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/api-docs.pdf">Click Here for api details</a>
 
 ## Backend Work
 -  Proper Exception Handling
