@@ -5,11 +5,11 @@
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
  
  ## Team Members
- <a href="github.com">some</a>
--  Sagar Pramanik
--  Swapnil Yeutkar
--  Sandeep Yadav
--  Akash Chikhlonde
+ 
+ <a href="https://github.com/sgrprmnk">Sagar Pramanik</a>
+ <a href="https://github.com/Sandeepyadav14">Sandeep Yadav</a>
+ <a href="https://github.com/Swapnil28Y">Swapanil Yeutkar</a>
+ <a href="https://github.com/Akash-298">Akash Chikhalonde</a>
 
 ## Module
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/model.png">
