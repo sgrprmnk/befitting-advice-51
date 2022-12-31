@@ -12,7 +12,7 @@ import java.util.List;
 public interface ItemService {
     public Item addItem(Item item, String restaurantId) throws ResturantException;
     public Item updateItem(Item item) throws ItemException;
-    public Item viewItem(Item item) throws ItemException;
+    public Item viewItem(String itemId) throws ItemException;
     public Item removeItem(String itemId) throws ItemException;
     public List<Item> viewAllItems(String categoryId) throws CategoryException,ItemException;
     public List<Item> viewAllItem(String resId) throws ItemException, ResturantException;
