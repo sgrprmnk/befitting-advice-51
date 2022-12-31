@@ -1,18 +1,17 @@
 package com.example.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
 @Entity
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@ToString
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
 public class FoodCart {
     @Id
     @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
@@ -29,45 +28,45 @@ public class FoodCart {
 //    @JoinColumn(name = "item_cart_id")
     private List<Item> itemList;
 
-    public FoodCart() {
-    }
-
-    public FoodCart(String cartId, Customer customer, List<Item> itemList) {
-        this.cartId = cartId;
-        this.customer = customer;
-        this.itemList = itemList;
-    }
-
-    public String getCartId() {
-        return cartId;
-    }
-
-    public void setCartId(String cartId) {
-        this.cartId = cartId;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public List<Item> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(List<Item> itemList) {
-        this.itemList = itemList;
-    }
-
-    @Override
-    public String toString() {
-        return "FoodCart{" +
-                "cartId='" + cartId + '\'' +
-                ", customer=" + customer +
-                ", itemList=" + itemList +
-                '}';
-    }
+//    public FoodCart() {
+//    }
+//
+//    public FoodCart(String cartId, Customer customer, List<Item> itemList) {
+//        this.cartId = cartId;
+//        this.customer = customer;
+//        this.itemList = itemList;
+//    }
+//
+//    public String getCartId() {
+//        return cartId;
+//    }
+//
+//    public void setCartId(String cartId) {
+//        this.cartId = cartId;
+//    }
+//
+//    public Customer getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
+//
+//    public List<Item> getItemList() {
+//        return itemList;
+//    }
+//
+//    public void setItemList(List<Item> itemList) {
+//        this.itemList = itemList;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "FoodCart{" +
+//                "cartId='" + cartId + '\'' +
+//                ", customer=" + customer +
+//                ", itemList=" + itemList +
+//                '}';
+//    }
 }

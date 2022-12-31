@@ -1,19 +1,17 @@
 package com.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
 @Entity
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Restaurant {
     @Id
     @GeneratedValue(generator = "UUID",strategy = GenerationType.IDENTITY)
@@ -35,64 +33,64 @@ public class Restaurant {
     private String managerName;
     private String contactNumber;
 
-    public Restaurant() {
-    }
-
-    public Restaurant(String restaurantId, String restaurantName, Address address, List<Item> itemList, String managerName, String contactNumber) {
-        this.restaurantId = restaurantId;
-        this.restaurantName = restaurantName;
-        this.address = address;
-        this.itemList = itemList;
-        this.managerName = managerName;
-        this.contactNumber = contactNumber;
-    }
-
-    public String getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(String restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public List<Item> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(List<Item> itemList) {
-        this.itemList = itemList;
-    }
-
-    public String getManagerName() {
-        return managerName;
-    }
-
-    public void setManagerName(String managerName) {
-        this.managerName = managerName;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
+//    public Restaurant() {
+//    }
+//
+//    public Restaurant(String restaurantId, String restaurantName, Address address, List<Item> itemList, String managerName, String contactNumber) {
+//        this.restaurantId = restaurantId;
+//        this.restaurantName = restaurantName;
+//        this.address = address;
+//        this.itemList = itemList;
+//        this.managerName = managerName;
+//        this.contactNumber = contactNumber;
+//    }
+//
+//    public String getRestaurantId() {
+//        return restaurantId;
+//    }
+//
+//    public void setRestaurantId(String restaurantId) {
+//        this.restaurantId = restaurantId;
+//    }
+//
+//    public String getRestaurantName() {
+//        return restaurantName;
+//    }
+//
+//    public void setRestaurantName(String restaurantName) {
+//        this.restaurantName = restaurantName;
+//    }
+//
+//    public Address getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(Address address) {
+//        this.address = address;
+//    }
+//
+//    public List<Item> getItemList() {
+//        return itemList;
+//    }
+//
+//    public void setItemList(List<Item> itemList) {
+//        this.itemList = itemList;
+//    }
+//
+//    public String getManagerName() {
+//        return managerName;
+//    }
+//
+//    public void setManagerName(String managerName) {
+//        this.managerName = managerName;
+//    }
+//
+//    public String getContactNumber() {
+//        return contactNumber;
+//    }
+//
+//    public void setContactNumber(String contactNumber) {
+//        this.contactNumber = contactNumber;
+//    }
 
 }
