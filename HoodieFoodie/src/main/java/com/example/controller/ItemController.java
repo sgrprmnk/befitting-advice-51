@@ -19,9 +19,9 @@ import java.util.List;
 public class ItemController {
     @Autowired
     private ItemService itemService;
-    @PostMapping("/item/{restaurantName}")
-    private ResponseEntity<Item> addItemHandler(@RequestBody  Item item, @PathVariable("restaurantName") String restaurantName) throws ResturantException {
-      Item items=itemService.addItem(item,restaurantName);
+    @PostMapping("/item/{restaurantId}")
+    private ResponseEntity<Item> addItemHandler(@RequestBody  Item item, @PathVariable("restaurantId") String restaurantId) throws ResturantException {
+      Item items=itemService.addItem(item,restaurantId);
       return new ResponseEntity<>(items, HttpStatus.CREATED);
 
     }
@@ -30,9 +30,9 @@ public class ItemController {
         Item uitem=itemService.updateItem(item);
         return new ResponseEntity<>(uitem,HttpStatus.ACCEPTED);
     }
-    @GetMapping("item")
-    private ResponseEntity<Item> viewItemHandler(@RequestBody Item item) throws ItemException {
-        Item item1=itemService.viewItem(item);
+    @GetMapping("item/{id}")
+    private ResponseEntity<Item> viewItemHandler(@PathVariable("id") String id) throws ItemException {
+        Item item1=itemService.viewItem(id);
         return new ResponseEntity<>(item1,HttpStatus.FOUND);
     }
     @DeleteMapping("item/{itemId}")
