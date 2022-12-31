@@ -10,7 +10,7 @@
  <br>
  <a href="https://github.com/Sandeepyadav14">Sandeep Yadav</a>
  <br>
- <a href="https://github.com/Swapnil28Y">Swapanil Yeutkar</a>
+ <a href="https://github.com/Swapnil28Y">Swapnil Yeutkar</a>
  <br>
  <a href="https://github.com/Akash-298">Akash Chikhalonde</a>
 
