@@ -28,10 +28,10 @@ Restaurant existingRestaurant=restaurantDao.findByRestaurantName(restaurant.getR
 if (existingRestaurant!=null){
     throw new ResturantException("Already Registered");
 }
-List<Item> itemList=restaurant.getItemList();
-for(Item item:itemList){
-    item.getRestaurants().add(restaurant);
-}
+// List<Item> itemList=restaurant.getItemList();
+// for(Item item:itemList){
+//     item.getRestaurants().add(restaurant);
+// }
 
 
         return restaurantDao.save(restaurant);
