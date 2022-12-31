@@ -60,8 +60,8 @@ public class OrderDetailsImpl implements OrderDetailsServices {
 	}
 
 	@Override
-	public OrderDetails viewOrder(OrderDetails orderdetails) throws OrderDetailsException {
-		Optional<OrderDetails> opt= orderDetailsDao.findById(orderdetails.getOrderId());
+	public OrderDetails viewOrder(int orderId) throws OrderDetailsException {
+		Optional<OrderDetails> opt= orderDetailsDao.findById(orderId);
 		if(opt.isPresent()) {
 			OrderDetails ood=opt.get();
 			return ood;
@@ -72,17 +72,17 @@ public class OrderDetailsImpl implements OrderDetailsServices {
 	}
 
 	@Override
-	public List<OrderDetails> viewAllOrdersByRestaurant(Restaurant restaurant) throws OrderDetailsException {
+	public List<OrderDetails> viewAllOrdersByRestaurant(String restoId) throws OrderDetailsException {
 
-	List<Item> items=restaurantDao.getItem(restaurant.getRestaurantId());
+	List<Item> items=restaurantDao.getItem(restoId);
 
 		return null;
 
 	}
 
 	@Override
-	public List<OrderDetails> viewAllOrdersByCustomer(Customer customer) throws OrderDetailsException{
-		FoodCart foodCart =foodCartDao.getFoodCartByCustomer(customer.getCustomerId());
+	public List<OrderDetails> viewAllOrdersByCustomer(String customerId) throws OrderDetailsException{
+		FoodCart foodCart =foodCartDao.getFoodCartByCustomer(customerId);
 		List<OrderDetails> orderDetails=orderDetailsDao.getCart(foodCart.getCartId());
 if(orderDetails.isEmpty()){
 	throw new OrderDetailsException("Not Found");

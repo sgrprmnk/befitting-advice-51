@@ -26,9 +26,9 @@ public class CategoryController {
         Category cat = cservice.updateCategory(category);
         return new ResponseEntity<>(cat, HttpStatus.OK);
     }
-    @DeleteMapping("/category")
-    public ResponseEntity<Category> removesCategory(@RequestBody Category category) throws CategoryException {
-        Category cat = cservice.removeCategory(category);
+    @DeleteMapping("/category/{categoryId}")
+    public ResponseEntity<Category> removesCategory(@PathVariable("categoryId") String categoryId) throws CategoryException {
+        Category cat = cservice.removeCategory(categoryId);
         return new ResponseEntity<>(cat, HttpStatus.OK);
     }
     @GetMapping("/category/{catn}")

@@ -15,6 +15,6 @@ public Customer addCustomer(Customer customer) throws CustomerException;
 	
 	public Customer viewCustomer(String customerId) throws CustomerException;
 	
-	public List<Customer> viewAllCustomer(Restaurant rest) throws CustomerException;
+	public List<Customer> viewAllCustomer(String gender) throws CustomerException;
 
 }

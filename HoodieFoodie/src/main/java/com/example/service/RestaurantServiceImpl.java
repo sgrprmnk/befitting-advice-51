@@ -24,14 +24,14 @@ public class RestaurantServiceImpl implements RestaurantService {
     private AddressDao addressDao;
     @Override
     public Restaurant addrestaurant(Restaurant restaurant) throws ResturantException {
-Restaurant existingRestaurant=restaurantDao.findByRestaurantName(restaurant.getRestaurantName());
+Restaurant existingRestaurant= restaurantDao.findByRestaurantName(restaurant.getRestaurantName());
 if (existingRestaurant!=null){
     throw new ResturantException("Already Registered");
 }
-// List<Item> itemList=restaurant.getItemList();
-// for(Item item:itemList){
-//     item.getRestaurants().add(restaurant);
-// }
+//List<Item> itemList=restaurant.getItemList();
+//for(Item item:itemList){
+//    item.getRestaurants().add(restaurant);
+//}
 
 
         return restaurantDao.save(restaurant);

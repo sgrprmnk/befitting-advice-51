@@ -13,9 +13,9 @@ public interface OrderDetailsServices {
 	public OrderDetails addOrder(OrderDetails orderdertails) throws OrderDetailsException;
 	public OrderDetails updateOrder(OrderDetails orderdetails) throws OrderDetailsException;
 	public OrderDetails removeOrder(OrderDetails orderdetails) throws OrderDetailsException;
-	public OrderDetails viewOrder(OrderDetails orderdetails) throws OrderDetailsException;
-	public List<OrderDetails>viewAllOrdersByRestaurant(Restaurant restaurant) throws OrderDetailsException;
-	public List<OrderDetails> viewAllOrdersByCustomer(Customer customer) throws OrderDetailsException, RestaurantException;
+	public OrderDetails viewOrder(int orderId) throws OrderDetailsException;
+	public List<OrderDetails>viewAllOrdersByRestaurant(String restoId) throws OrderDetailsException;
+	public List<OrderDetails> viewAllOrdersByCustomer(String customerId) throws OrderDetailsException, RestaurantException;
 	
 
 }

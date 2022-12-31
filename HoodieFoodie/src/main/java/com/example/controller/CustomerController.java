@@ -54,9 +54,9 @@ public class CustomerController {
 		
 	}
 	
-	@GetMapping("/customers")
-	public ResponseEntity<List<Customer>> viewAllCustomerByRestaurantHandler(@RequestBody Restaurant rest) throws CustomerException{
-		List<Customer> customerLists =customerService.viewAllCustomer(rest);
+	@GetMapping("/customers/{gender}")
+	public ResponseEntity<List<Customer>> viewAllCustomerByRestaurantHandler(@PathVariable("gender") String gender) throws CustomerException{
+		List<Customer> customerLists =customerService.viewAllCustomer(gender);
 		return new ResponseEntity<>(customerLists,HttpStatus.FOUND);
 	}
 }

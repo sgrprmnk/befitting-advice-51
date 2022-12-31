@@ -28,8 +28,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category removeCategory(Category category) throws CategoryException {
-        Optional<Category> c= cdao.findById(category.getCatId());
+    public Category removeCategory(String categoryId) throws CategoryException {
+        Optional<Category> c= cdao.findById(categoryId);
         if(c.isPresent()) {
 
             Category dle= c.get();

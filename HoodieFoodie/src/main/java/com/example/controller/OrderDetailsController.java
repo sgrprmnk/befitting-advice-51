@@ -9,12 +9,7 @@ import com.example.service.OrderDetailsServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,24 +39,24 @@ public class OrderDetailsController {
 		return new ResponseEntity<>(od, HttpStatus.OK);
 	}
 
-	@GetMapping("viewsOrderDetails")
-	public ResponseEntity<OrderDetails> viewOrderDetailsHanler(@RequestBody OrderDetails ordeDetails) throws OrderDetailsException{
-		OrderDetails od=ods.viewOrder(ordeDetails);
+	@GetMapping("viewsOrderDetails/{id}")
+	public ResponseEntity<OrderDetails> viewOrderDetailsHanler(@PathVariable("id") int id) throws OrderDetailsException{
+		OrderDetails od=ods.viewOrder(id);
 		return new ResponseEntity<>(od, HttpStatus.ACCEPTED);
 	}
 
 
-	@GetMapping("ByRestraunt")
-	public ResponseEntity<List<OrderDetails>> viewOrderDetailsByRestrauntHanler(@RequestBody Restaurant restaurant) throws OrderDetailsException{
-		List<OrderDetails> odlist=ods.viewAllOrdersByRestaurant(restaurant);
+	@GetMapping("ByRestraunt/{restoId}")
+	public ResponseEntity<List<OrderDetails>> viewOrderDetailsByRestrauntHanler(@PathVariable("restoId") String restoId) throws OrderDetailsException{
+		List<OrderDetails> odlist=ods.viewAllOrdersByRestaurant(restoId);
 
 		return new ResponseEntity<>(odlist, HttpStatus.ACCEPTED);
 	}
 
 
-	@GetMapping("ByCustomer")
-	public ResponseEntity<List<OrderDetails>> viewOrderDetailsByCustomerHanler(@RequestBody Customer customer) throws OrderDetailsException, RestaurantException {
-		List<OrderDetails> odlist=ods.viewAllOrdersByCustomer(customer);
+	@GetMapping("ByCustomer/{customerId}")
+	public ResponseEntity<List<OrderDetails>> viewOrderDetailsByCustomerHanler(@PathVariable("customerId") String customerId ) throws OrderDetailsException, RestaurantException {
+		List<OrderDetails> odlist=ods.viewAllOrdersByCustomer(customerId);
 
 		return new ResponseEntity<>(odlist, HttpStatus.ACCEPTED);
 	}

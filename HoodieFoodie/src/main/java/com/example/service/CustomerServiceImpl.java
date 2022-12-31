@@ -73,9 +73,9 @@ public class CustomerServiceImpl implements CustomerService {
 //	}
 
 	@Override
-	public List<Customer> viewAllCustomer(Restaurant rest) throws CustomerException {
+	public List<Customer> viewAllCustomer(String gender) throws CustomerException {
 		// TODO Auto-generated method stub
-List<Customer> customers=customerDao.findByAddress(rest.getAddress());
+List<Customer> customers=customerDao.findByGender(gender);
 
 if(customers.isEmpty()) {
 	throw new CustomerException("Customer Not find");
