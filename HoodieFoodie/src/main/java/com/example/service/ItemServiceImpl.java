@@ -48,8 +48,8 @@ existingRestaurant.get().getItemList().add(item);
     }
 
     @Override
-    public Item viewItem(Item item) throws ItemException {
-      return itemDao.findById(item.getItemId()).orElseThrow(()-> new ItemException("Item Does not Exist"));
+    public Item viewItem(String itemId) throws ItemException {
+      return itemDao.findById(itemId).orElseThrow(()-> new ItemException("Item Does not Exist"));
     }
 
     @Override
