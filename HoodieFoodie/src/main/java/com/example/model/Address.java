@@ -4,9 +4,12 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -20,12 +23,20 @@ public class Address {
     strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false)
     private String addressId;
+    @Pattern(regexp="^[A-Z][a-z]*]", message = "{name.invalid}")
     private String buildingName;
+    @Pattern(regexp="^[A-Z][a-z][0-9]*]",message = "{name.invalid}")
     private String StreetNo;
+    @Pattern(regexp="^[A-Z][a-z]*]", message = "{name.invalid}")
     private String area;
+    @Pattern(regexp="^[A-Z][a-z]*]",message = "{name.invalid}")
     private String city;
+    @Pattern(regexp="^[A-Z][a-z]*]",message = "{name.invalid}")
     private String state;
+    @Pattern(regexp="^[A-Z][a-z]*]",message = "{name.invalid}")
     private String country;
+    @Size(min = 6,max = 6)
+    @Pattern(regexp="^[0-9]*]",message = "{pin.invalid}")
     private String pinCode;
 
 //    public Address() {

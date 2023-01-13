@@ -5,9 +5,12 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,12 +23,15 @@ public class Item {
             strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String itemId;
+    @Pattern(regexp="^[A-Z][a-z]*]", message = "{name.invalid}")
     private String itemName;
     @ManyToOne(cascade = CascadeType.ALL)
 
 //    @JoinColumn(name = "category_cat_id")
     private Category category;
+    @Min(value = 1 ,message = "Minimum 1 should be there")
     private Integer quantity;
+    @Min(value = 99,message = "Minimum cost should be 99 Rupees")
     private Double cost;
 
 @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "itemList")

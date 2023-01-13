@@ -3,6 +3,7 @@ package com.example.model;
 import lombok.*;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

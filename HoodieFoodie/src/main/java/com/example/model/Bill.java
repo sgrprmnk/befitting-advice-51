@@ -4,9 +4,12 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDateTime;
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -20,13 +23,16 @@ public class Bill {
     strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String billId;
+    @PastOrPresent(message = "{bill.invalid}")
     private LocalDateTime billDate;
 
 
     @OneToOne(cascade = CascadeType.ALL)
    // @JoinColumn(name = "order_order_id")
     private OrderDetails order;
+    @Min(value = 1,message = "item should be minimum 1")
     private Integer totalItem;
+    @Min(value = 99,message = "total cost should be minimum 99 Rupees")
     private Double totalCost;
 
 //    public Bill() {

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString

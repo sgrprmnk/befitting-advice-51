@@ -5,9 +5,12 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,6 +23,7 @@ public class Restaurant {
     strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String restaurantId;
+    @Pattern(regexp="^[A-Z][a-z]*]", message = "{name.invalid}")
     private String restaurantName;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -30,7 +34,10 @@ public class Restaurant {
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 //    @JoinTable(name = "restaurantItem", joinColumns = @JoinColumn(name ="restaurant_id" ),inverseJoinColumns = @JoinColumn(name = "item_id"))
     private List<Item> itemList;
+    @Pattern(regexp="^[A-Z][a-z]*]", message = "{name.invalid}")
     private String managerName;
+    @Size(min = 10, max = 10,message = "It should be 10 digits")
+    @Pattern(regexp="^[0-9]*]", message = "{name.invalid}")
     private String contactNumber;
 
 //    public Restaurant() {

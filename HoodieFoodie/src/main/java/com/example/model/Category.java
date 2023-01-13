@@ -2,11 +2,13 @@ package com.example.model;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -20,6 +22,7 @@ public class Category {
     strategy = "org.hibernate.id.UUIDGenerator")
     @Column(updatable = false, nullable = false)
     private String catId;
+
     private String categoryName;
 
 //    public Category() {
