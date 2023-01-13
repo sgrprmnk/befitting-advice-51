@@ -25,7 +25,7 @@
 
 
 ## Functionality (Swagger UI) 
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityDocumentation_swagger.pdf">Click Here for functionality details</a>
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Hoodie_Foodie_ui.pdf">Click Here for functionality details</a>
 ## Functionality at a glance
 -   User can register/login-logout
 -   can view all items
@@ -38,7 +38,7 @@
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
 
 ## REST API
-<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/api-docs.pdf">Click Here for api details</a>
+<a href="https://github.com/sgrprmnk/befitting-advice-51/blob/main/Hoodie_Foodie_api.pdf">Click Here for api details</a>
 
 ## Backend Work
 -  Proper Exception Handling
