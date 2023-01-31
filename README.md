@@ -34,7 +34,7 @@
 -   Add to cart/edit into the cart
 -   Place Order
 -   Get orderdetails
--   Get Bills
+-   Calculate Bills
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/functionalityAtGlance.png">
 
 ## REST API
