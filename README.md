@@ -31,7 +31,8 @@
 -   can view all items
 -   can view restaurants
 -   Find items by category
--   Add to cart/edit into the cart
+-   Find restaurants by area
+-   Add to cart
 -   Place Order
 -   Get orderdetails
 -   Calculate Bills
