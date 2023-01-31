@@ -1,6 +1,6 @@
 # Hoodie Foodie (Online Food Delivery System)
 <img src="https://github.com/sgrprmnk/befitting-advice-51/blob/main/ProjectLogo.PNG">
-## Online Food Delivery App strictly followed MVC architecture
+<h2> Online Food Delivery App strictly followed MVC architecture </h2>
 
  - We have developed this REST API for an Ecommarce Rest API. This API performs all the fundamental CRUD operations of any ecommarce Application platform with user validation at every step.
  
