@@ -62,6 +62,14 @@
     
 -to check the swagger http://localhost:8888/swagger-ui/
 
+
+### App is live on AWS find the link below:
+#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/
+
+### It is also live on swagger find the link below:
+#### http://hoodiefoodie-env.eba-8rymyyiz.ap-south-1.elasticbeanstalk.com/swagger-ui/
+
+
 ## Tech Stacks
 <p>
    <img src="https://img.icons8.com/color/64/000000/java.png"/>
